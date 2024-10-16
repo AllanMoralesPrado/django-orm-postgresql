@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.template import loader
@@ -66,16 +66,5 @@ def actualizarregistro(request, id):
     post.title = titulo
     post.content = contenido
     post.author = autor
-    print(post.title, post.content, post.author)
-    post.save()
-    post2 = Post.objects.get(id=id)
-    print(post2.title, post2.content, post2.author)
-    return HttpResponseRedirect(reverse('index'))
-
-def mandar_por_mandar(request):
-    post = Post.objects.get(id=1)
-    post.title = "A"
-    post.content = "B"
-    post.author = "C"
-    post.save()
+    post.save() 
     return HttpResponseRedirect(reverse('index'))

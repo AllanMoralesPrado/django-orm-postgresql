@@ -1,5 +1,5 @@
 <h1>Agregar Post</h1>
-<form action="agregarregistro/" method="post">
+<form action="{% url "agregarregistro" %}" method="post">
     {% csrf_token %}
     Titulo:
     <br>

@@ -1,5 +1,5 @@
 <h1>Actualizar Post</h1>
-<form action="{% url "actualizarregistro" post.id %}" method="post">
+<form action="actualizarregistro/{{ post.id }}" method="post">
     {% csrf_token %}
     Titulo:
     <br>
